@@ -15,8 +15,8 @@
     <copyright>Copyright 2018</copyright>
     <tags>parameter validation attribute .net framework</tags>
     <dependencies>
-      <dependency id="IPuresharp" version="3.2.1"/>
-      <dependency id="Puresharp" version="3.2.1"/>
+      <dependency id="IPuresharp" version="4.0.0"/>
+      <dependency id="Puresharp" version="4.0.0"/>
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations"  />
