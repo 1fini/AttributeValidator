@@ -1,0 +1,8 @@
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\bin\Debug\Puresharp.ParameterValidator.dll.config
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\bin\Debug\Puresharp.ParameterValidator.dll
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\bin\Debug\Puresharp.ParameterValidator.pdb
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\bin\Debug\Puresharp.dll
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\bin\Debug\Puresharp.xml
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\obj\Debug\ParameterValidator.csproj.CoreCompileInputs.cache
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\obj\Debug\Puresharp.ParameterValidator.dll
+C:\Users\hinom\Source\Repos\AttributeValidator\ParameterValidator\obj\Debug\Puresharp.ParameterValidator.pdb
