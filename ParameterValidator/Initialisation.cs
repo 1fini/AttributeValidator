@@ -7,12 +7,12 @@ using System.Reflection;
 using System.ComponentModel.DataAnnotations;
 using Puresharp.Legacy;
 
-namespace ParameterValidator
+namespace AttributeValidator
 {
     public static class Initialisation
     {
         [Startup]
-        static public void AutoInscription()
+        static public void AutoSubscription()
         {
             foreach(var type in System.Reflection.Assembly.GetAssembly(typeof(Initialisation)).DefinedTypes)
             {
@@ -55,11 +55,11 @@ namespace ParameterValidator
         {
             yield return Advice
                 .For(method)
-                .Parameter<EmailAddressAttribute>()
+                .Parameter<CreditCardAttribute>()
                 .Validate((_Parameter, _Attribute, _Value) =>
                 {
                     if (_Value == null) { throw new ArgumentNullException(_Parameter.Name); }
-                    try { new CreditCardAttribute().IsValid(_Value); }
+                    try { if (!(new CreditCardAttribute().IsValid(_Value))) { throw new Exception("Credit card not valid."); } ; }
                     catch (Exception exception) { throw new ArgumentException(_Parameter.Name, exception); }
                 });
         }

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParameterValidator", "ParameterValidator\ParameterValidator.csproj", "{EB5841A8-E180-4447-AA66-AB8F9639928C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeValidator", "ParameterValidator\AttributeValidator.csproj", "{EB5841A8-E180-4447-AA66-AB8F9639928C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSubscribe", "AutoSubscribe\AutoSubscribe.csproj", "{04F0CA33-BB3A-4D5D-BCA1-BBD2902A8846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EB5841A8-E180-4447-AA66-AB8F9639928C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5841A8-E180-4447-AA66-AB8F9639928C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5841A8-E180-4447-AA66-AB8F9639928C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F0CA33-BB3A-4D5D-BCA1-BBD2902A8846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F0CA33-BB3A-4D5D-BCA1-BBD2902A8846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F0CA33-BB3A-4D5D-BCA1-BBD2902A8846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F0CA33-BB3A-4D5D-BCA1-BBD2902A8846}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

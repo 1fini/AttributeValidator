@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/AttributeValidator/v15/.suo
+/.vs/Puresharp.AttributeValidator/v15
+/AutoSubscribe/bin/Debug
+/AutoSubscribe/obj/Debug
+/packages
+/ParameterValidator/bin/Debug
+/ParameterValidator/obj/Debug
