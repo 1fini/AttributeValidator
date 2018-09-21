@@ -6,34 +6,37 @@ using System.Net.Mail;
 using System.Reflection;
 using System.ComponentModel.DataAnnotations;
 using Puresharp.Legacy;
+using System.ServiceModel;
 
-namespace AttributeValidator
+namespace ParameterValidator
 {
-    public static class Initialisation
+    internal static class Initialisation
     {
-        [Startup]
-        static public void AutoSubscription()
+        static Initialisation()
         {
-            foreach(var type in System.Reflection.Assembly.GetAssembly(typeof(Initialisation)).DefinedTypes)
+            foreach (var type in System.Reflection.Assembly.GetAssembly(typeof(Initialisation)).DefinedTypes)
             {
                 if (type.BaseType == typeof(Aspect))
                 {
                     var aspectConstructorInfo = type.GetConstructor(new Type[] { });
                     var aspect = (Aspect)aspectConstructorInfo.Invoke(BindingFlags.CreateInstance, null, new Object[] { }, System.Globalization.CultureInfo.CurrentCulture);
-                    aspect.Weave<Pointcut<Service>>();
+                    aspect.Weave<Pointcut<OperationContractAttribute>>();
                 }
             }
+        }
 
-            
+        [Startup]
+        static public void AutoInscription()
+        {
         }
     }
 
-    [AttributeUsage(AttributeTargets.Method)]
-    public class Service : Attribute
+    public interface IParameterValidatorWeaver
     {
+        void Weave(Aspect validationAspect);
     }
 
-    public class EmailValidationAspect : Aspect
+    internal class EmailValidationAspect : Aspect
     {
         public override IEnumerable<Advisor> Manage(MethodBase method)
         {
@@ -49,7 +52,7 @@ namespace AttributeValidator
         }
     }
 
-    public class CreditCardValidationAspect : Aspect
+    internal class CreditCardValidationAspect : Aspect
     {
         public override IEnumerable<Advisor> Manage(MethodBase method)
         {
@@ -59,7 +62,7 @@ namespace AttributeValidator
                 .Validate((_Parameter, _Attribute, _Value) =>
                 {
                     if (_Value == null) { throw new ArgumentNullException(_Parameter.Name); }
-                    try { if (!(new CreditCardAttribute().IsValid(_Value))) { throw new Exception("Credit card not valid."); } ; }
+                    try { if (!(new CreditCardAttribute().IsValid(_Value))) { throw new Exception("Credit card not valid."); }; }
                     catch (Exception exception) { throw new ArgumentException(_Parameter.Name, exception); }
                 });
         }

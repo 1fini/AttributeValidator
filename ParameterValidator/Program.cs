@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 
 namespace AttributeValidator
 {
@@ -25,13 +22,13 @@ namespace AttributeValidator
 
         public class Toto
         {
-            [Service]
+            [OperationContract]
             public void Hello([EmailAddress] string email)
             {
                 Console.WriteLine($"Your email address is correct.");
             }
 
-            [Service]
+            [OperationContract]
             public void Hi([CreditCard] string creditcardnumber)
             {
                 Console.WriteLine($"Your credit card number is valid.");

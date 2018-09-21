@@ -13,13 +13,21 @@
     <description>Library that enables the user to validate all the most frequently used .Net framework attributes.</description>
     <releaseNotes>Initial version.</releaseNotes>
     <copyright>Copyright 2018</copyright>
-    <tags>parameter validation attribute .net framework</tags>
+    <tags>Parameter validation attribute .net framework</tags>
     <dependencies>
-      <dependency id="IPuresharp" version="4.0.0"/>
-      <dependency id="Puresharp" version="4.0.0"/>
+      <dependency id="IPuresharp" version="4.1.0"/>
+      <dependency id="Puresharp" version="4.1.0"/>
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations"  />
     </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="AutoSubscribe.exe" target="build" />
+    <file src="Mono.Cecil.dll" target="build" />
+    <file src="Mono.Cecil.Mdb.dll" target="build" />
+    <file src="Mono.Cecil.Pdb.dll" target="build" />
+    <file src="Mono.Cecil.Rocks.dll" target="build" />
+    <file src="Puresharp.ParameterValidator.targets" target="build" />
+  </files>
 </package>
