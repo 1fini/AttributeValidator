@@ -33,7 +33,7 @@ namespace AutoSubscribe
                 var _cctor = new MethodDefinition(".cctor", Mono.Cecil.MethodAttributes.Static | Mono.Cecil.MethodAttributes.Public | Mono.Cecil.MethodAttributes.HideBySig | Mono.Cecil.MethodAttributes.SpecialName | Mono.Cecil.MethodAttributes.RTSpecialName, mainModuleType.Module.TypeSystem.Void);
                 mainModuleType.Methods.Add(_cctor);
 
-                _cctor.Body.Instructions.Add(Instruction.Create(OpCodes.Ldstr, "ParameterValidator.Initialisation, Puresharp.ParameterValidator"));
+                _cctor.Body.Instructions.Add(Instruction.Create(OpCodes.Ldstr, "AttributeValidator.Initialisation, Puresharp.AttributeValidator"));
                 _cctor.Body.Instructions.Add(Instruction.Create(OpCodes.Call, module.Import(typeof(Type).GetMethod("GetType", new Type[] { typeof(string) }))));
                 _cctor.Body.Instructions.Add(Instruction.Create(OpCodes.Ldstr, "AutoInscription"));
                 _cctor.Body.Instructions.Add(Instruction.Create(OpCodes.Callvirt, module.Import(typeof(Type).GetMethod("GetMethod", new Type[] { typeof(string) }))));
@@ -47,7 +47,7 @@ namespace AutoSubscribe
             else
             {
                 var index = cctor.Body.Instructions.Count - 1; // position à laquelle on peut insérer 
-                cctor.Body.Instructions.Insert(index++, Instruction.Create(OpCodes.Ldstr, "ParameterValidator.Initialisation, Puresharp.ParameterValidator"));
+                cctor.Body.Instructions.Insert(index++, Instruction.Create(OpCodes.Ldstr, "AttributeValidator.Initialisation, Puresharp.AttributeValidator"));
                 cctor.Body.Instructions.Insert(index++, Instruction.Create(OpCodes.Call, module.Import(typeof(Type).GetMethod("GetType", new Type[] { typeof(string) }))));
                 cctor.Body.Instructions.Insert(index++, Instruction.Create(OpCodes.Ldstr, "AutoInscription"));
                 cctor.Body.Instructions.Insert(index++, Instruction.Create(OpCodes.Callvirt, module.Import(typeof(Type).GetMethod("GetMethod", new Type[] { typeof(string) }))));

@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using Puresharp.Legacy;
 using System.ServiceModel;
 
-namespace ParameterValidator
+namespace AttributeValidator
 {
     internal static class Initialisation
     {

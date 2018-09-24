@@ -58,8 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="ParameterValidator.nuspec" />
-    <None Include="Puresharp.ParameterValidator.targets" />
+    <None Include="AttributeValidator.nuspec" />
+    <None Include="Puresharp.AttributeValidator.targets" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AutoSubscribe.exe" />
