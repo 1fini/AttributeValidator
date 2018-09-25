@@ -3,3 +3,9 @@ Validation of the most common .Net framework attributes with the powerful Puresh
 
 This code is aimed to be embedded into a NuGet package to help people validate basic .Net framework attributes sucha as [EmailAddress] or [CreditCard] and so on. 
 All methods tagged [OperationContract] (later users will be able to choose the tags that will be automatically checked). 
+
+##Supported attributes so far : 
+-Email
+-CreditCard
+-Phone
+-Url
