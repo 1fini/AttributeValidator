@@ -11,8 +11,9 @@ namespace AttributeValidator
             try
             {
                 var toto = new Toto();
-                toto.Hello("toto");
-                toto.Hi("toto@gmail.com");                
+                //toto.Hello("toto");
+                //toto.Hi("toto@gmail.com");
+                toto.AddPhone("+33676573012");
             }
             catch (Exception ex)
             {
@@ -25,13 +26,25 @@ namespace AttributeValidator
             [OperationContract]
             public void Hello([EmailAddress] string email)
             {
-                Console.WriteLine($"Your email address is correct.");
+                Console.WriteLine($"Your email address {email} is correct.");
             }
 
             [OperationContract]
             public void Hi([CreditCard] string creditcardnumber)
             {
-                Console.WriteLine($"Your credit card number is valid.");
+                Console.WriteLine($"Your credit card number {creditcardnumber} is valid.");
+            }
+
+            [OperationContract]
+            public void AddPhone([Phone] string phoneNumber)
+            {
+                Console.WriteLine($"Your phone number {phoneNumber} is considered valid.");
+            }
+
+            [OperationContract]
+            public void AddUrl([Url] string url)
+            {
+                Console.WriteLine($"Your phone number {url} is considered valid.");
             }
         }
     }
