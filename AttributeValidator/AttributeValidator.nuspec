@@ -4,7 +4,7 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>Jean-Daniel GIORDANI</authors>
+    <authors>Jean-Daniel GIORDANI, Tony THONG</authors>
     <owners>Jean-Daniel GIORDANI</owners>
     <licenseUrl>https://github.com/1fini/AttributeValidator/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/1fini/AttributeValidator</projectUrl>
@@ -12,7 +12,9 @@
     <description>Library that enables the user to validate the most frequently used .Net framework attributes.</description>
     <releaseNotes>Initial version.</releaseNotes>
     <copyright>Jean-Daniel Giordani - Copyright 2018</copyright>
-    <tags>Attribute Validation .net framework puresharp custom aspect weaving</tags>
+    <tags>Attribute Validation .Net automatic framework puresharp custom aspect weaving C#</tags>
+    <summary>Library that enables the user to validate the most frequently used .Net framework attributes using puresharp framework.</summary>
+    <language>English</language>
     <dependencies>
       <dependency id="IPuresharp" version="4.1.0"/>
       <dependency id="Puresharp" version="4.1.0"/>

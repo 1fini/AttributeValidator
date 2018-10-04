@@ -14,13 +14,25 @@ namespace AttributeValidator
     {
         static Initialisation()
         {
+            var additionnalWeavers = AppDomain.CurrentDomain.GetAssemblies().SelectMany(_A => _A.GetTypes()).Where(_T => typeof(IAttributeValidatorWeaver).IsAssignableFrom(_T) && _T.IsClass).Select(_T => Activator.CreateInstance(_T) as IAttributeValidatorWeaver).ToArray();
+
             foreach (var type in System.Reflection.Assembly.GetAssembly(typeof(Initialisation)).DefinedTypes)
             {
                 if (type.BaseType == typeof(Aspect))
                 {
                     var aspectConstructorInfo = type.GetConstructor(new Type[] { });
                     var aspect = (Aspect)aspectConstructorInfo.Invoke(BindingFlags.CreateInstance, null, new Object[] { }, System.Globalization.CultureInfo.CurrentCulture);
-                    aspect.Weave<Pointcut<OperationContractAttribute>>();
+                    if (additionnalWeavers.Length == 0)
+                    {
+                        aspect.Weave<Pointcut<OperationContractAttribute>>();
+                    }
+                    else
+                    {
+                        foreach (var aw in additionnalWeavers)
+                        {
+                            aw.Weave(aspect);
+                        }
+                    }
                 }
             }
         }
@@ -31,7 +43,7 @@ namespace AttributeValidator
         }
     }
 
-    public interface IParameterValidatorWeaver
+    public interface IAttributeValidatorWeaver
     {
         void Weave(Aspect validationAspect);
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ServiceModel;
+using Puresharp;
 
 namespace AttributeValidator
 {
@@ -13,7 +14,9 @@ namespace AttributeValidator
                 var toto = new Toto();
                 //toto.Hello("toto");
                 //toto.Hi("toto@gmail.com");
-                toto.AddPhone("+33676573012");
+                //toto.AddPhone("+33676573012");
+                toto.AddEmailCheckOnCustomAttribute("toto@gmail.com");
+                toto.AddEmailCheckOnCustomAttribute("toto");
             }
             catch (Exception ex)
             {
@@ -45,6 +48,30 @@ namespace AttributeValidator
             public void AddUrl([Url] string url)
             {
                 Console.WriteLine($"Your phone number {url} is considered valid.");
+            }
+
+            [CustomValidation]
+            public void AddEmailCheckOnCustomAttribute([EmailAddress] string email)
+            {
+                Console.WriteLine($"Your address {email} has passed the check.");
+            }
+        }
+
+        /// <summary>
+        /// Defines a new attribute to use on the methods to be verfied
+        /// </summary>
+        public class CustomValidationAttribute : Attribute
+        {
+        }
+
+        /// <summary>
+        /// Defines a new Weaver that can bind an aspect on an attribute
+        /// </summary>
+        public class CustomValidationWeaver : IAttributeValidatorWeaver
+        {
+            public void Weave(Aspect validationAspect)
+            {
+                validationAspect.Weave<Pointcut<CustomValidationAttribute>>();
             }
         }
     }
