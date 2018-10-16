@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ServiceModel;
 using Puresharp;
 
-namespace AttributeValidator
+namespace Puresharp.AttributeValidator
 {
     class Program
     {
