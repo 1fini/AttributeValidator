@@ -7,6 +7,6 @@
     </BuildDependsOn>
   </PropertyGroup>
   <Target Name="AutoSubscribe">
-    <Exec Command="&quot;$(SolutionDir)packages\Puresharp.AttributeValidator.0.0.0.2\build\AutoSubscribe.exe&quot; &quot;$(TargetPath)&quot;" />
+    <Exec Command="&quot;$(SolutionDir)packages\Puresharp.AttributeValidator.1.0.0\build\AutoSubscribe.exe&quot; &quot;$(TargetPath)&quot;" />
   </Target>
 </Project>

@@ -12,7 +12,7 @@
     <description>Library that enables the user to validate the most frequently used .Net framework attributes.</description>
     <releaseNotes>Initial version.</releaseNotes>
     <copyright>Jean-Daniel Giordani - Copyright 2018</copyright>
-    <tags>Attribute Validation .Net automatic framework puresharp custom aspect weaving C#</tags>
+    <tags>Attribute Validation .Net AOP automatic framework puresharp custom aspect weaving C#</tags>
     <summary>Library that enables the user to validate the most frequently used .Net framework attributes using puresharp framework.</summary>
     <language>English</language>
     <dependencies>
